@@ -1,7 +1,7 @@
 function App() {
 
   return (
-    <div><h1>Hello</h1></div>
+    <div><h1 className='h1'>My Spotify Month</h1></div>
   )
 }
 
