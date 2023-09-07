@@ -1,11 +1,9 @@
-import authenticate from "./services/authenticate"
-import fetchTopArtists from "./services/fetchTopArtists"
+import LandingPage from "./pages/LandingPage"
 
 function App() {
   return (
     <div>
-      <button onClick={async () => await authenticate()}>Authenticate</button>
-      <button onClick={async() => await fetchTopArtists(await authenticate())}>Get Top Artists</button>
+      <LandingPage />
     </div>
   )
 }
