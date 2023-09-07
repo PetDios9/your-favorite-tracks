@@ -1,7 +1,12 @@
-function App() {
+import authenticate from "./services/authenticate"
+import fetchTopArtists from "./services/fetchTopArtists"
 
+function App() {
   return (
-    <div><h1 className='h1'>My Spotify Month</h1></div>
+    <div>
+      <button onClick={async () => await authenticate()}>Authenticate</button>
+      <button onClick={async() => await fetchTopArtists(await authenticate())}>Get Top Artists</button>
+    </div>
   )
 }
 
