@@ -1,11 +1,27 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
 import './index.css'
 import './scss/app.scss'
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import LandingPage from './pages/LandingPage';
+import TopTen from './pages/TopTen';
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <LandingPage />,
+  },
+  {
+    path: "/top-ten",
+    element: <TopTen />
+  }
+]);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-      <App />
-  </React.StrictMode>,
+
+      <RouterProvider router={router} />
+
 )
