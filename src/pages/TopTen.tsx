@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { getAccessToken } from '../services/getAccessToken';
 import { redirectToAuthCodeFlow } from "../services/redirectToAuthCodeFlow";
+import televisionPic from '../assets/television.png'
 
 export default function TopTen() {
     const [tracks, setTracks] = useState<object[]>([])
@@ -32,6 +33,7 @@ export default function TopTen() {
 
   return (
     <div>
+        <img src={televisionPic} />
         {loading ? <h1>Loading tracks...</h1> : <p>Top Ten!</p>}
         {
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
