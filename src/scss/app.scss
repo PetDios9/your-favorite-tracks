@@ -40,3 +40,24 @@ $green: #1DB954;
         }
     }
 }
+.top-ten-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.television-container {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+.television {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+.song-screen {
+    position: absolute;
+    top: 140px;
+    left: 28px;
+}
