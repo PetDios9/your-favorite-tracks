@@ -1,4 +1,8 @@
 export async function getAccessToken(clientId: string, code: string) {
+
+    if (sessionStorage.getItem('access_token')) {
+        return sessionStorage.getItem('access_token')
+    }
     const verifier = localStorage.getItem("verifier");
 
     const params = new URLSearchParams();
@@ -15,5 +19,6 @@ export async function getAccessToken(clientId: string, code: string) {
     });
 
     const { access_token } = await result.json();
+    sessionStorage.setItem('access_token', access_token)
     return access_token;
 }
