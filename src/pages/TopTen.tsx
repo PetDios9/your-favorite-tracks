@@ -21,6 +21,10 @@ export default function TopTen() {
                 return
             }
             const token = await getAccessToken(clientId, code)
+            if(!token) {
+                await redirectToAuthCodeFlow
+                return
+            }
             const response = await fetch("https://api.spotify.com/v1/me/top/tracks?time_range=short_term&limit=10&offset=0", {
                 method: "GET", headers: { Authorization: `Bearer ${token}` }
             })
