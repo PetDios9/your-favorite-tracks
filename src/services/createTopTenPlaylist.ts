@@ -11,4 +11,5 @@ export default async function createTopTenPlaylist(token: string, tracks: Tracks
     const playlistResponse = await createEmptyPlaylist(user.id, token)
     const playlist = playlistResponse
     await addSongsToPlaylist(playlist.id!, tracks, token)
+    window.open(playlist.external_urls.spotify, '_blank')?.focus()
 }

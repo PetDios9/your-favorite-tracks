@@ -35,20 +35,31 @@ export default function TopTen() {
 
   return (
     <div className="top-ten-container">
-        {/* { loading ? <h1>Loading...</h1> : null}
-        {!loading && tracks.length > 0 ? tracks.map((track, i) => {
-            return <TrackCard uri={track.uri} trackId={track.id!} trackName={track.name} artistName={track.artists[0].name} previewURL={track.preview_url!} albumName={track.album.name} image={track.album.images[1].url} placement={i + 1}/>
-        }) : null}         */}
         <h1 className="top-ten-heading">Your Top Ten Most Listened To Tracks From The Past Month!</h1>
 
         {
             !loading && tracks.length > 0 ? tracks.map((track, i) => {
-                return <TrackCard uri={track.uri} trackId={track.id!} trackName={track.name} artistName={track.artists[0].name} previewURL={track.preview_url!} albumName={track.album.name} image={track.album.images[1].url} placement={i + 1}/>
-            }) : <h1>Loading Top Ten...</h1>
+                return <TrackCard 
+                    key={track.id} 
+                    uri={track.uri} 
+                    trackId={track.id} 
+                    trackName={track.name} 
+                    artistName={track.artists[0].name} 
+                    previewURL={track.preview_url!} 
+                    albumName={track.album.name} 
+                    image={track.album.images[1].url} 
+                    placement={i + 1}/>
+            }) : 
+            <h1>Loading Top Ten...</h1>
         }
 
         {
-            !loading ? <button onClick={() => createTopTenPlaylist(accessToken!, tracks)}> Playlist </button> : null
+            !loading ? 
+            <div>
+                <h4>Use the button below to turn these tracks into a playlist!</h4>
+                <button onClick={() => createTopTenPlaylist(accessToken!, tracks)}> Playlist </button>
+            </div>
+            : null
         }
     </div>
   )
