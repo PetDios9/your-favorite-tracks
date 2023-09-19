@@ -5,5 +5,6 @@ export default interface TracksModel {
     albumName: string,
     previewURL: string,
     image : string,
-    placement: number
+    placement: number,
+    uri: string
 }
