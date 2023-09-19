@@ -1,8 +1,9 @@
-export default interface Tracks {
+export default interface TracksModel {
     trackId: string,
     trackName: string,
     artistName: string,
     albumName: string,
     previewURL: string,
-    image : string
+    image : string,
+    placement: number
 }
