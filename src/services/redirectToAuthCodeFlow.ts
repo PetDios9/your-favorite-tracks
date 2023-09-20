@@ -3,7 +3,7 @@ export async function redirectToAuthCodeFlow(clientId: string) {
     const challenge = await generateCodeChallenge(verifier);
 
     localStorage.setItem("verifier", verifier);
-    const redirectURI = import.meta.env.VITE_REDIRECT_URIO
+    const redirectURI = import.meta.env.VITE_REDIRECT_URI
     const params = new URLSearchParams();
     params.append("client_id", clientId);
     params.append("response_type", "code");
