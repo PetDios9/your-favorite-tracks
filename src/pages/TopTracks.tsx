@@ -17,7 +17,6 @@ export default function TopTracks() {
             const clientId = import.meta.env.VITE_CLIENT_ID
             const params = new URLSearchParams(window.location.search)
             const code = params.get('code')
-
             if (!code) {
                 await redirectToAuthCodeFlow(clientId)
                 return
@@ -58,7 +57,7 @@ export default function TopTracks() {
                     </div>
                     <div className="track-cards-container">
                     {
-                        !loading && tracks.length > 0 ? tracks.map((track, i) => {
+                        !loading && tracks?.length > 0 ? tracks?.map((track, i) => {
                             return <TrackCard 
                                 key={track.id} 
                                 uri={track.uri} 
@@ -69,7 +68,11 @@ export default function TopTracks() {
                                 albumName={track.album.name} 
                                 image={track.album.images[1].url} 
                                 placement={i + 1}/>
-                        }) : <h1>Loading Top Ten...</h1>
+                        }) : 
+                        <div>
+                            <h1>Loading Top Ten...</h1>
+                            <div className="loading-ring"></div>
+                        </div>
                     }
 
                     </div>
