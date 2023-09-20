@@ -43,32 +43,36 @@ export default function TopTracks() {
             !loading ?
                 <div>
                     <div className="timeframe-buttons-container">
-                        <button style={timeframe === 'short_term' ? {backgroundColor: 'red'} : undefined} name="short_term" className="timeframe-button" onClick={()=> setTimeframe('short_term')}>1 Month</button>
-                        <button style={timeframe === 'medium_term' ? {backgroundColor: 'red'} : undefined} name="medium_term" className="timeframe-button" onClick={()=> setTimeframe('medium_term')}>6 Months</button>
-                        <button style={timeframe === 'long_term' ? {backgroundColor: 'red'} : undefined} name="long_term" className="timeframe-button" onClick={()=> setTimeframe('long_term')}>All Time</button>
+                        <button style={timeframe === 'short_term' ? {backgroundColor: '#1DB954'} : undefined} name="short_term" className="timeframe-button" onClick={()=> setTimeframe('short_term')}>1 Month</button>
+                        <button style={timeframe === 'medium_term' ? {backgroundColor: '#1DB954'} : undefined} name="medium_term" className="timeframe-button" onClick={()=> setTimeframe('medium_term')}>6 Months</button>
+                        <button style={timeframe === 'long_term' ? {backgroundColor: '#1DB954'} : undefined} name="long_term" className="timeframe-button" onClick={()=> setTimeframe('long_term')}>All Time</button>
                     </div>
                     <div className="quantity-buttons-container">
-                        <button style={tracksQuantity === '10' ? {backgroundColor: 'red'} : undefined} name="10" className="quantity-button" onClick={()=> setTracksQuantity('10')}>Top 10 Tracks</button>
-                        <button style={tracksQuantity === '25' ? {backgroundColor: 'red'} : undefined} name="25" className="quantity-button" onClick={()=> setTracksQuantity('25')}>Top 25 Tracks</button>
-                        <button style={tracksQuantity === '50' ? {backgroundColor: 'red'} : undefined} name="50" className="quantity-button" onClick={()=> setTracksQuantity('50')}>Top 50 Tracks</button>
+                        <button style={tracksQuantity === '10' ? {backgroundColor: '#1DB954'} : undefined} name="10" className="quantity-button" onClick={()=> setTracksQuantity('10')}>Top 10 Tracks</button>
+                        <button style={tracksQuantity === '25' ? {backgroundColor: '#1DB954'} : undefined} name="25" className="quantity-button" onClick={()=> setTracksQuantity('25')}>Top 25 Tracks</button>
+                        <button style={tracksQuantity === '50' ? {backgroundColor: '#1DB954'} : undefined} name="50" className="quantity-button" onClick={()=> setTracksQuantity('50')}>Top 50 Tracks</button>
                     </div>
                     <div>
                         <h4>Use the button below to turn these tracks into a playlist!</h4>
                         <button onClick={() => createTopPlaylist(accessToken!, tracks, timeframe, tracksQuantity)}>Playlistify</button>
                     </div>
+                    <div className="track-cards-container">
                     {
-                    !loading && tracks.length > 0 ? tracks.map((track, i) => {
-                        return <TrackCard 
-                            key={track.id} 
-                            uri={track.uri} 
-                            trackId={track.id} 
-                            trackName={track.name} 
-                            artistName={track.artists[0].name} 
-                            previewURL={track.preview_url!} 
-                            albumName={track.album.name} 
-                            image={track.album.images[1].url} 
-                            placement={i + 1}/>
-                    }) : <h1>Loading Top Ten...</h1>}
+                        !loading && tracks.length > 0 ? tracks.map((track, i) => {
+                            return <TrackCard 
+                                key={track.id} 
+                                uri={track.uri} 
+                                trackId={track.id} 
+                                trackName={track.name} 
+                                artistName={track.artists[0].name} 
+                                previewURL={track.preview_url!} 
+                                albumName={track.album.name} 
+                                image={track.album.images[1].url} 
+                                placement={i + 1}/>
+                        }) : <h1>Loading Top Ten...</h1>
+                    }
+
+                    </div>
                 </div>
         : <h4>Loading Top Tracks...</h4>}
     </div>

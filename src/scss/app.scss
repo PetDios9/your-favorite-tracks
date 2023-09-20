@@ -48,15 +48,23 @@ $green: #1DB954;
     justify-content: center;
     flex-direction: column;
     text-align: center;
-    @media only screen and (min-width: 756px) {
-       flex-direction: row;
-       flex-wrap: wrap;
-    }
 
 }
 .timeframe-button, .quantity-button {
     margin: 10px;
     border-radius: 10px;
+    border: none;
+}
+.track-cards-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    @media only screen and (min-width: 756px) {
+        & {
+            flex-direction: column;
+        }
+     }
 }
 .track-card {
     backdrop-filter: blur(16px) saturate(180%);
