@@ -5,6 +5,7 @@ $green: #1DB954;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 5%;
 }
 .login-container {
     display: flex;
@@ -58,6 +59,7 @@ $green: #1DB954;
 }
 .track-cards-container {
     display: flex;
+    align-items: center;
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
@@ -81,16 +83,21 @@ $green: #1DB954;
     justify-content:center;
     text-align: center;
     height: 481px;
-    width: 380px;
-    margin: 10px;
+    width: auto;
+    margin: 5px;
     @media only screen and (min-width: 600px) {
         & {
           width: 320px;
         }
       }
-      @media only screen and (max-width: 430px) {
+      @media only screen and (max-width: 425px) {
         & {
-          width: auto;
+          width: 280px;
+        }
+      }
+      @media only screen and (max-width: 375px) {
+        & {
+          width: 240px;
         }
       }
     .track-image {
@@ -139,4 +146,7 @@ $green: #1DB954;
       transform: rotate(360deg);
     }
   }
-  
+  .headers-container {
+    padding-top: 0px;
+    padding-bottom: 20px
+  }
