@@ -6,7 +6,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import LandingPage from './pages/LandingPage';
-import TopTen from './pages/TopTen';
+import TopTracks from './pages/TopTracks';
 
 const router = createBrowserRouter([
   {
@@ -14,8 +14,8 @@ const router = createBrowserRouter([
     element: <LandingPage />,
   },
   {
-    path: "/top-ten",
-    element: <TopTen />
+    path: "/top-tracks",
+    element: <TopTracks />
   }
 ]);
 

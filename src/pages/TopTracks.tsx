@@ -2,9 +2,9 @@ import { useState, useEffect } from "react"
 import { getAccessToken } from '../services/getAccessToken';
 import { redirectToAuthCodeFlow } from "../services/redirectToAuthCodeFlow";
 import TrackCard from "../components/TrackCard";
-import createTopTenPlaylist from "../services/createTopTenPlaylist";
+import createTopPlaylist from "../services/createTopPlaylist";
 
-export default function TopTen() {
+export default function TopTracks() {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const [tracks, setTracks] = useState<any[]>([])
     const [loading, setLoading] = useState<boolean>(true)
@@ -36,8 +36,8 @@ export default function TopTen() {
     const accessToken = sessionStorage.getItem('access_token')
 
   return (
-    <div className="top-ten-container">
-        <h1 className="top-ten-heading">Your Most Listened To Tracks!</h1>
+    <div className="top-tracks-container">
+        <h1 className="top-tracks-heading">Your Favorites In Review!</h1>
         <h2>Use the buttons below to change the time range and amount of songs you want to see.</h2>
         {
             !loading ?
@@ -54,7 +54,7 @@ export default function TopTen() {
                     </div>
                     <div>
                         <h4>Use the button below to turn these tracks into a playlist!</h4>
-                        <button onClick={() => createTopTenPlaylist(accessToken!, tracks, timeframe, tracksQuantity)}>Playlistify</button>
+                        <button onClick={() => createTopPlaylist(accessToken!, tracks, timeframe, tracksQuantity)}>Playlistify</button>
                     </div>
                     {
                     !loading && tracks.length > 0 ? tracks.map((track, i) => {

@@ -1,11 +1,11 @@
 import LandingPage from "./pages/LandingPage"
-import TopTen from "./pages/TopTen"
+import TopTracks from "./pages/TopTracks"
 
 function App() {
   return (
     <div>
       <LandingPage />
-      <TopTen />
+      <TopTracks />
     </div>
   )
 }
