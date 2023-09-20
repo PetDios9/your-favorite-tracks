@@ -6,6 +6,9 @@ export default function TrackCard(props: TracksModel) {
             <img className="track-image" src={props.image} />
             <h1>{props.trackName}</h1>
             <p>{props.artistName}</p>
+            {
+                props.previewURL !== '' ? <audio src={props.previewURL} controls /> : <p>No Preview Available</p>
+            }
             <h1>#{props.placement}</h1>
     </div>
   )
