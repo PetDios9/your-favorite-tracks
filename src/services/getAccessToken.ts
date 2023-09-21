@@ -1,8 +1,14 @@
+import { refreshToken } from "./refreshToken";
+
 export async function getAccessToken(clientId: string, code: string) {
 
+    if(sessionStorage.getItem('access_token') && (Date.now() - parseInt(sessionStorage.getItem('token_set_time')!) > parseInt(sessionStorage.getItem('token_expiration')!))){
+        return await refreshToken(clientId)
+    }
     if (sessionStorage.getItem('access_token')) {
         return sessionStorage.getItem('access_token')
     }
+
     const verifier = localStorage.getItem("verifier");
     const redirect_uri = import.meta.env.VITE_REDIRECT_URI
     const params = new URLSearchParams();
@@ -18,7 +24,10 @@ export async function getAccessToken(clientId: string, code: string) {
         body: params
     });
 
-    const { access_token } = await result.json();
+    const { access_token, refresh_token, expires_in } = await result.json();
     sessionStorage.setItem('access_token', access_token)
+    sessionStorage.setItem('refresh_token', refresh_token)
+    sessionStorage.setItem('token_expiration', `${expires_in * 1000}`)
+    sessionStorage.setItem('token_set_time', `${Date.now()}`)
     return access_token;
 }
