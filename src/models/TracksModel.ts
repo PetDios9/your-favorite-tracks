@@ -6,5 +6,6 @@ export default interface TracksModel {
     previewURL: string,
     image : string,
     placement: number,
-    uri: string
+    uri: string,
+    externalUrl: string
 }

@@ -82,7 +82,7 @@ $green: #1DB954;
     align-items: center;
     justify-content:center;
     text-align: center;
-    height: 481px;
+    height: 550px;
     width: auto;
     margin: 5px;
     @media only screen and (min-width: 600px) {
@@ -104,7 +104,6 @@ $green: #1DB954;
         height: 300px;
         width: 300px;
         left: 50%;
-        border-radius: 12px;
         border: 1px solid rgba(255,255,255, 0.255)
       }
     h1 {
@@ -120,6 +119,9 @@ $green: #1DB954;
         font-size: 0.8rem;
         letter-spacing: 2px;
         text-transform: uppercase;
+      }
+      svg {
+        min-height: 55px
       }
   }
   .loading-ring {
@@ -150,3 +152,14 @@ $green: #1DB954;
     padding-top: 0px;
     padding-bottom: 20px
   }
+.placement-number, .track-link {
+  margin-bottom: 25px;
+}
+.track-link {
+  text-decoration: underline;
+  font-style: italic;
+  color: #FFF;
+  &:hover {
+    color: $green
+  }
+}

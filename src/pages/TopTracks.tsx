@@ -69,7 +69,9 @@ export default function TopTracks() {
                                 previewURL={track.preview_url!} 
                                 albumName={track.album.name} 
                                 image={track.album.images[1].url} 
-                                placement={i + 1}/>
+                                placement={i + 1}
+                                externalUrl={track.external_urls.spotify}
+                                />
                         }) : 
                         <div>
                             <h1>Loading Top Tracks...</h1>
