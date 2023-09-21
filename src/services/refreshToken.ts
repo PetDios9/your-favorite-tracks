@@ -1,6 +1,5 @@
 export async function refreshToken(clientId: string) {
     const refreshToken = sessionStorage.getItem('refresh_token')
-    console.log(refreshToken)
     const params = new URLSearchParams();
     params.append("client_id", clientId);
     params.append("grant_type", "refresh_token");
@@ -12,7 +11,6 @@ export async function refreshToken(clientId: string) {
         body: params
     });
     const jsonResult = await result.json()
-    console.log(jsonResult)
     const {access_token, expires_in ,refresh_token} = jsonResult
     sessionStorage.setItem('access_token', access_token)
     sessionStorage.setItem('token_set_time', `${Date.now()}`)

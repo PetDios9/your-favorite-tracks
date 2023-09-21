@@ -2,10 +2,10 @@ import { refreshToken } from "./refreshToken";
 
 export async function getAccessToken(clientId: string, code: string) {
 
-    if(sessionStorage.getItem('access_token') && (Date.now() - parseInt(sessionStorage.getItem('token_set_time')!) > parseInt(sessionStorage.getItem('token_expiration')!))){
+    if(sessionStorage.getItem('access_token') && (Date.now() - Number(sessionStorage.getItem('token_set_time')!) > Number(sessionStorage.getItem('token_expiration')!))){
         return await refreshToken(clientId)
     }
-    if (sessionStorage.getItem('access_token')) {
+    if (sessionStorage.getItem('access_token') && (Date.now() - Number(sessionStorage.getItem('token_set_time')!) < Number(sessionStorage.getItem('token_expiration')!))) {
         return sessionStorage.getItem('access_token')
     }
 
