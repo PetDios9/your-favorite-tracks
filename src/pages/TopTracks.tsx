@@ -72,14 +72,18 @@ export default function TopTracks() {
                                 placement={i + 1}/>
                         }) : 
                         <div>
-                            <h1>Loading Top Ten...</h1>
+                            <h1>Loading Top Tracks...</h1>
                             <div className="loading-ring"></div>
                         </div>
                     }
 
                     </div>
                 </div>
-        : <h4>Loading Top Tracks...</h4>}
+        :<div>
+            <h1>Loading Top Tracks...</h1>
+            <div className="loading-ring"></div>
+        </div>
+    }
     </div>
   )
 }
