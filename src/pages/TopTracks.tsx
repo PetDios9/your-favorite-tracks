@@ -3,7 +3,6 @@ import { getAccessToken } from '../services/getAccessToken';
 import { redirectToAuthCodeFlow } from "../services/redirectToAuthCodeFlow";
 import TrackCard from "../components/TrackCard";
 import createTopPlaylist from "../services/createTopPlaylist";
-import { refreshToken } from "../services/refreshToken";
 
 export default function TopTracks() {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -38,7 +37,6 @@ export default function TopTracks() {
   return (
     <div className="top-tracks-container">
         <h1 className="top-tracks-heading">Your Favorites In Review!</h1>
-        <button onClick={()=>refreshToken(import.meta.env.VITE_CLIENT_ID)}>Refresh Token</button>
         {
             !loading ?
                 <div>

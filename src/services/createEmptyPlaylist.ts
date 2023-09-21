@@ -2,13 +2,13 @@ export default async function createPlaylist(userID:string, token: string, timef
     let time 
     switch(timeframe){
         case 'short_term':
-            time = 'month'
+            time = 'from one month'
             break
         case 'medium_term':
-            time = '6 months'
+            time = 'from 6 months'
             break
         case 'long_term':
-            time = 'year'
+            time = 'of all time'
             break
     }
     const date = new Date()
@@ -20,7 +20,7 @@ export default async function createPlaylist(userID:string, token: string, timef
             headers: { Authorization: `Bearer ${token}` },
             body: JSON.stringify({
                 name: `Top ${tracksQuantity} Up To ${month}/${day}/${year}`,
-                description: `These have been your ${tracksQuantity} favorite tracks from the past ${time} up till ${month}/${day}/${year}!`
+                description: `These have been your ${tracksQuantity} favorite tracks ${time} up till ${month}/${day}/${year}!`
             })
         })
         return playlist.json()
