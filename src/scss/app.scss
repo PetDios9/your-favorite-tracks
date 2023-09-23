@@ -42,6 +42,26 @@ $green: #1DB954;
         }
     }
 }
+.demo-gif-desktop{
+  margin-top: 20px;
+  align-self: center;
+  width: 110%;
+  @media only screen and (max-width: 600px){
+    & {
+      display: none
+    }
+  }
+}
+.demo-gif-mobile {
+  width: 80%;
+  align-self: center;
+  margin-top: 10px;
+  @media only screen and (min-width: 601px) {
+    & {
+      display: none;
+    }
+  }
+}
 .top-tracks-heading {
     flex-basis: 100%;
     font-style: italic;
