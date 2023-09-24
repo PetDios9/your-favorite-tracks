@@ -1,27 +1,13 @@
-# React + TypeScript + Vite
+# Your Favorites In Review
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This webapp gives Spotify suers the ability to view their most listened to tracks for multiple different time ranges and different track quantities. Users also have the ability to have the tracks saved as a playlist and automatically added to their Spotify account. Built using React, TypeScript, Vite, SASS, and Spotify's Web API.
 
-Currently, two official plugins are available:
+# Why was this project made?
+This project was made partially in an effort to showcase my abilities to work with 3rd party API's as well as ability to create front-end web applications. It also was made because I have always wanted to work with Spotify's public web API due to hearing how well constructed it was and the amount of information you can obtain from it. Final reason this app was created was because I have always loved Spotify Wrapped and the way it displays your most listened to tracks for the year, but disliked how it would come only once a year. This webapp solves that problem by allowing users to be able to see their top tracks whenever they like and have these tracks converted into a playlist!
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Credits
+Thank you to Spotify's wonderful documentation and tutorials on using their Web API. Thank you to Netlify for providing a platform for deploying the web application.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+# Note:
+The webapp is live and deployed here: https://thunderous-bienenstitch-0bfa22.netlify.app/
+Spotify limits 3rd party developers that use their Web API to "Authorized Testers" that can have their data pulled in the webapp once authenticated through Spotify. As a result, public users are not able to use the app just yet, as it is currently pending review and approval by Spotify. Once approved, anyone will be able to authenticate and use the application. Until then, do not hesitate to reach out to peterdiosdadochavez@gmail.com for a demo or to be added as an authorized tester!
