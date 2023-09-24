@@ -1,4 +1,4 @@
-# Your Favorites In Review
+# Your Favorites Tracks
 
 This webapp gives Spotify users the ability to view their most listened to tracks for multiple different time ranges and different track quantities. Users also have the ability to have the tracks saved as a playlist and automatically added to their Spotify account. Built using React, TypeScript, Vite, SASS, and Spotify's Web API.
 
