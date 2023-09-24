@@ -36,7 +36,7 @@ export default function TopTracks() {
 
   return (
     <div className="top-tracks-container">
-        <h1 className="top-tracks-heading">Your Favorites In Review!</h1>
+        <h1 className="top-tracks-heading">Your Favorite Tracks!</h1>
         {
             !loading ?
                 <div>
